@@ -80,12 +80,12 @@ body.light-theme .selecao-de-personagens .titulo {
     flex-direction: column; /* Alinha logo e botão verticalmente */
     justify-content: center;
     align-items: center; /* Centraliza o conteúdo */
-    margin-top: 3rem;
-    height: 5rem /* Preenche toda a altura da tela */
+    margin-top: 1rem;
+    margin-bottom: 3rem;
 }
 
 .logo {
-    width: 18.875rem;
+    width: 12.875rem;
 }
 
 /* Seção de Seleção de Personagens */
@@ -116,12 +116,13 @@ body.light-theme .selecao-de-personagens .titulo {
 
 .selecao-de-personagens .titulo {
     font-size: 1.4rem;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.5rem;
     text-transform: uppercase;
     border-bottom: 0.125rem solid #ff0000;
     width: 100%;
     text-align: center;
 }
+
 
 /* Estilos gerais para a seção inicio */
 .inicio {
@@ -347,7 +348,6 @@ footer {
     flex-direction: column; /* Muda para coluna para empilhar os elementos */
     justify-content: center; /* Centraliza na vertical */
     align-items: center; /* Centraliza na horizontal */
-    padding: 1rem;
     color: white;
 }
 
@@ -383,4 +383,130 @@ footer .botao-direito {
     font-size: 1.5rem;
     cursor: pointer;
     margin-top: 1rem; /* Adiciona espaçamento entre o botão e os ícones */
+}
+
+/* Estilos para o Modal do Trailer */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Inicialmente escondido */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-conteudo {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+}
+
+#fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 8px;
+}
+
+/* Estilos para a seção de Episódios */
+.episodios-favoritos {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.lista-episodios {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.episodio {
+    background-color: none;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+body.light-theme .episodio {
+    background-color: none;
+    color: #000000;
+}
+
+.episodio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.episodio-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+
+body.light-theme .episodio-titulo {
+    color:#000000
+}
+
+.episodio-imagem {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.episodio p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.assistir-trailer {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.assistir-trailer:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividade para Modal e Episódios */
+@media (max-width: 768px) {
+    .modal-conteudo {
+        width: 90%;
+        padding: 10px;
+    }
+
+    iframe {
+        height: 200px;
+    }
+
+    .lista-episodios {
+        grid-template-columns: 1fr;
+    }
 }
