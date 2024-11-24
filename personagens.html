@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/responsivo.css">
+    <!-- Link para o FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>The Seven Deadly Sins</title>
+</head>
+    
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="personagens.html">Personagens</a></li>
+            <li><a href="episodios.html">Episódios</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+
+    <header class="cabecalho">
+        <img class="logo" src="./src/imagens/logo.png" alt="Logo The Seven Deadly Sins">
+    </header>
+    
+    <main class="selecao-de-personagens">
+        <section class="personagens">
+            <h1 class="titulo"> Selecione um personagem </h1>
+
+            <ul class="lista-de-personagens">
+                <!-- Personagem Meliodas -->
+                <li class="personagem selecionado" id="meliodas" data-name="Meliodas (Pecado da Ira do Dragão)" data-description="Meliodas é o líder dos Sete Pecados Capitais e o Pecado da Ira do Dragão. Ele é o atual príncipe de Liones e filho do Rei Demônio. Sua habilidade, o 'Full Counter', permite que ele reflita ataques mágicos e físicos. Meliodas também possui o Tesouro Sagrado, a Espada Demônio Lostvayne. Durante o anime, ele é revelado como o antigo líder dos Dez Mandamentos e um dos personagens mais poderosos do mundo.">
+                    <img class="personagem-pequeno" src="./src/imagens/meliodas-2.jpg" alt="Personagem meliodas">
+                </li>
+
+                <!-- Personagem Ban -->
+                <li class="personagem" id="ban" data-name="Ban (Pecado da Ganância da Raposa)" data-description="Ban é um dos Sete Pecados Capitais e o Pecado da Ganância. Sua habilidade é a imortalidade, resultado de beber da Fonte da Juventude Eterna. Ele é conhecido por sua habilidade 'Snatch', que permite roubar habilidades ou forças de outros. Ban tem um relacionamento profundo com Meliodas, e sua história está entrelaçada com sua busca pela imortalidade, a luta com os demônios e seu amor por Elaine, a fada da floresta.">
+                    <img class="personagem-pequeno" src="./src/imagens/ban-2.jpg" alt="Personagem ban">
+                </li>
+
+                <!-- Personagem Escanor -->
+                <li class="personagem" id="escanor" data-name="Escanor (Pecado do Orgulho do Leão)" data-description="Escanor é o Pecado do Orgulho e o membro mais forte dos Sete Pecados Capitais. Seu poder cresce exponencialmente com o aumento da luz solar, alcançando seu pico ao meio-dia, quando ele se torna o homem mais forte do mundo. Escanor tem uma personalidade arrogante e orgulhosa, mas também revela um grande coração, especialmente em sua relação com Merlin e seus companheiros.">
+                    <img class="personagem-pequeno" src="./src/imagens/escanor-2.jpg" alt="Personagem escanor">
+                </li>
+
+                <!-- Personagem Diane -->
+                <li class="personagem" id="diane" data-name="Diane (Pecado da Inveja da Serpente)" data-description="Diane é um dos Sete Pecados Capitais e o Pecado da Inveja. Ela é uma gigante com uma habilidade chamada 'Creation', que lhe permite criar e manipular a terra. Diane também é muito próxima de Meliodas e Ban, e ao longo da série, desenvolve um vínculo profundo com o cavaleiro humano King. Sua história envolve sua luta interna com seu poder e sua identidade como um gigante, além do amor por King.">
+                    <img class="personagem-pequeno" src="./src/imagens/diane-2.jpg" alt="Personagem diane">
+                </li>
+
+                <!-- Personagem Merlin -->
+                <li class="personagem" id="merlin" data-name="Merlin (Pecado da Gula do Javali)" data-description="Merlin é a mais poderosa maga de Britânia, com a habilidade 'Infinity', que lhe permite criar um campo de força impenetrável. Ela é muito inteligente e astuta, com um forte desejo de poder e conhecimento. Merlin é uma personagem complexa que esconde uma vida de mistérios e segredos, e sua história envolve seu passado sombrio e sua luta pelo controle sobre seu destino.">
+                    <img class="personagem-pequeno" src="./src/imagens/merlin-2.jpg" alt="Personagem merlin">
+                </li>
+
+                <!-- Personagem Gowther -->
+                <li class="personagem" id="gowther" data-name="Gowther (Pecado da Luxúria da Cabra)" data-description="Gowther é o Pecado da Luxúria e membro dos Sete Pecados Capitais. Ele é um demônio, mas também é um dos personagens mais enigmáticos da série, devido à sua origem e identidade. Ele é o portador do Tesouro Sagrado 'Herritt', um arco que permite usar a habilidade 'Invasion', controlando as mentes dos outros. Sua história revela a complexidade de sua identidade e seu papel em manipular as emoções e pensamentos dos outros.">
+                    <img class="personagem-pequeno" src="./src/imagens/gowther-2.jpg" alt="Personagem gowther">
+                </li>
+
+                <!-- Personagem King -->
+                <li class="personagem" id="king" data-name="King (Pecado da Preguiça do Urso)" data-description="King, também conhecido como Harlequin, é o Pecado da Preguiça e o Rei das Fadas. Sua habilidade é o 'Disaster', que permite controlar as forças da natureza. King é extremamente leal aos seus amigos, especialmente Diane, com quem tem uma história de amor. Seu poder está atrelado à sua Lança Espiritual 'Chastiefol', e ele é o protetor da Floresta do Rei das Fadas.">
+                    <img class="personagem-pequeno" src="./src/imagens/king-2.jpg" alt="Personagem king">
+                </li>
+            </ul>
+        </section>
+
+        <section class="personagem-selecionado">
+            <img class="personagem-grande" src="./src/imagens/card-meliodas.webp" alt="Personagem Selecionado">
+            <div class="informacoes-personagem">
+                <h2 class="nome-personagem" id="nome-personagem">Meliodas (Pecado da Ira do Dragão)</h2>
+                <p class="descricao-personagem" id="descricao-personagem">Meliodas é o líder dos Sete Pecados Capitais e o Pecado da Ira do Dragão. Ele é o atual príncipe de Liones e filho do Rei Demônio. Sua habilidade, o 'Full Counter', permite que ele reflita ataques mágicos e físicos. Meliodas também possui o Tesouro Sagrado, a Espada Demônio Lostvayne. Durante o anime, ele é revelado como o antigo líder dos Dez Mandamentos e um dos personagens mais poderosos do mundo.</p>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <button id="theme-toggle" class="botao-direito" aria-label="Alterar Tema">
+            <i class="fas fa-moon"></i>
+        </button>
+    </footer>
+    <script src="./src/js/index.js"></script>
+</body>
+</html>

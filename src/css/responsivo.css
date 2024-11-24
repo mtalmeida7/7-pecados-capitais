@@ -1,0 +1,74 @@
+@media (max-width: 1120px) {
+    /* Reduzindo o tamanho da logo no cabeçalho */
+    .cabecalho .logo {
+        max-width: 190px;
+    }
+
+    /* Alterando o layout da seleção de personagens para coluna em telas menores */
+    .selecao-de-personagens {
+        flex-direction: column-reverse;
+        max-width: 430px;
+        margin: 0 auto;
+    }
+
+    /* Ajustando o título da seção de personagens */
+    .selecao-de-personagens .personagens .titulo {
+        font-size: 15px;
+    }
+
+    /* Ajustando a lista de personagens para mais compacta */
+    .selecao-de-personagens .lista-de-personagens {
+        gap: 9px;
+    }
+
+    /* Ajustando o tamanho das imagens dos personagens */
+    .lista-de-personagens .personagem-pequeno {
+        width: 110px;
+        max-width: 100%;
+    }
+
+    /* Ajustando o tamanho da imagem do personagem selecionado */
+    .personagem-selecionado .personagem-grande {
+        width: 200px;
+        height: 320px;
+        margin-top: 30px;
+    }
+
+    /* Ajustando a descrição do personagem */
+    .personagem-selecionado .descricao-personagem {
+        width: 80%;
+        font-size: 1rem;
+        margin: 20px auto;
+    }
+
+    /* Ajustando a altura do fundo para telas menores */
+    body::before {
+        height: 1362px;
+    }
+}
+
+/* Adicionando outro breakpoint para dispositivos ainda menores (ex. mobile) */
+@media (max-width: 768px) {
+    .cabecalho .logo {
+        max-width: 150px;
+    }
+
+    .selecao-de-personagens {
+        flex-direction: column;
+        max-width: 90%;
+    }
+
+    .selecao-de-personagens .personagens .titulo {
+        font-size: 14px;
+    }
+
+    .personagem-selecionado .personagem-grande {
+        width: 180px;
+        height: 280px;
+    }
+
+    .personagem-selecionado .descricao-personagem {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}

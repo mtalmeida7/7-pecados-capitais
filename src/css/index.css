@@ -1,0 +1,288 @@
+/* Estilo para o tema escuro (padrão) */
+body {
+    font-family: 'Oxanium', cursive;
+    background: #000000;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+}
+
+body::before {
+    content: "";
+    background-image: url(../imagens/img-de-fundo.jpg); /* Imagem para o tema escuro */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 20%;
+    transition: background-image 0.3s ease; /* Transição suave para a troca de imagem */
+}
+
+/* Estilo para o tema claro */
+body.light-theme {
+    background: #ffffff;
+    color: #000000;
+}
+
+body.light-theme::before {
+    background-image: url(../imagens/img-de-fundo2.jpg); /* Nova imagem para o tema claro */
+}
+
+body.light-theme .nome-personagem {
+    border-bottom: 0.125rem solid #0cd4d4; /* Cor da borda no tema claro */
+}
+
+body.light-theme .nav-list li a {
+    color: #000000; /* Cor do texto para o tema claro */
+}
+
+body.light-theme .nav-list li a:hover {
+    background-color: #878787; /* Efeito hover para o tema claro */
+}
+
+body.light-theme .selecao-de-personagens .titulo {
+    border-bottom: 0.125rem solid #0cd4d4; /* Cor da borda no tema claro */
+}
+
+/* Botão de alternância de tema */
+#theme-toggle {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    font-size: 1.5rem; /* Aumenta o tamanho do ícone */
+    cursor: pointer;
+    padding: 2.5rem;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+    display: block;
+    margin: 1.25rem auto; /* Centraliza o botão e dá espaçamento */
+}
+
+#theme-toggle:hover {
+    background-color: #555;
+    border-radius: 0.3125rem;
+}
+
+/* Estilos para o ícone do botão de alternância */
+#theme-toggle .icon {
+    font-size: 1.5rem; /* Define o tamanho do ícone */
+    transition: transform 0.3s ease; /* Suaviza o efeito de transformação */
+}
+
+#theme-toggle:hover .icon {
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+
+/* Estilos para o cabeçalho */
+.cabecalho {
+    display: flex;
+    flex-direction: column; /* Alinha logo e botão verticalmente */
+    justify-content: center;
+    align-items: center; /* Centraliza o conteúdo */
+    margin-top: 3rem;
+    height: 5rem /* Preenche toda a altura da tela */
+}
+
+.logo {
+    width: 18.875rem;
+}
+
+/* Seção de Seleção de Personagens */
+.selecao-de-personagens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    min-height: calc(100vh - 12.9375rem - 8.625rem); /* Ajuste a altura da seção */
+}
+
+/* Lista de Personagens */
+.selecao-de-personagens .lista-de-personagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.875rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.selecao-de-personagens .personagens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 36.5625rem;
+    gap: 1.5625rem;
+}
+
+.selecao-de-personagens .titulo {
+    font-size: 1.4rem;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+    border-bottom: 0.125rem solid #ff0000;
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilos gerais para a seção inicio */
+.inicio {
+    padding: 1rem 2rem; /* Espaçamento interno */
+    max-width: 1200px; /* Limita a largura para não ficar muito grande */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* Estilos para a seção sobre */
+.sobre {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column; /* Coloca o conteúdo em coluna */
+    align-items: flex-start; /* Alinha tudo à esquerda */
+    gap: 1.5rem; /* Espaçamento entre os elementos */
+    color: #ddd; /* Cor padrão do texto para o tema escuro */
+}
+
+.sobre .titulo {
+    font-size: 2.25rem; /* Tamanho grande para o título */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    text-transform: uppercase; /* Deixa o título em maiúsculas */
+    color: #ff0000; /* Cor laranja para o título */
+    margin-bottom: 1.5rem; /* Espaçamento inferior */
+}
+
+/* Estilo para os itens da lista */
+.sobre li {
+    font-size: 1.125rem; /* Tamanho de fonte médio */
+    line-height: 1.8rem; /* Maior espaçamento entre linhas */
+    color: #ddd; /* Cor mais suave para o texto */
+    margin-bottom: 1.5rem; /* Espaçamento inferior entre os itens */
+    list-style-type: none; /* Remove o marcador da lista */
+}
+
+.sobre li::before {
+    content: "►"; /* Ícone de marcador */
+    color: #ff4500; /* Cor do marcador */
+    margin-right: 10px; /* Espaço entre o marcador e o texto */
+}
+
+/* Modificações para o tema claro */
+body.light-theme .sobre {
+    color: #000000; /* Cor do texto no tema claro */
+}
+
+body.light-theme .sobre .titulo {
+    color: #0cd4d4; /* Título em cor laranja no tema claro */
+}
+
+body.light-theme .sobre li {
+    color: #333; /* Cor mais escura para os itens da lista no tema claro */
+}
+
+body.light-theme .sobre li::before {
+    color: #0cd4d4; /* Cor do marcador no tema claro */
+}
+
+/* Estilos para os personagens pequenos na lista */
+.lista-de-personagens .personagem-pequeno {
+    width: 7.1875rem;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.lista-de-personagens .personagem-pequeno:hover {
+    transform: scale(1.02);
+}
+
+/* Estilo para o personagem selecionado */
+.lista-de-personagens .personagem.selecionado {
+    box-shadow: 0px 0px 1.5rem 0.3125rem #7d2424;
+}
+
+body.light-theme .lista-de-personagens .personagem.selecionado {
+    box-shadow: 0px 0px 1.5rem 0.3125rem #0cd4d4;
+}
+
+/* Estilos para a exibição do personagem selecionado */
+.personagem-selecionado {
+    text-align: center;
+    max-height: 33.125rem;
+    margin-bottom: 3.125rem;
+}
+
+.personagem-selecionado .personagem-grande {
+    width: 13.75rem;
+    height: 22.875rem;
+}
+
+.personagem-selecionado .nome-personagem {
+    border-bottom: 0.125rem solid #ff0000;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.personagem-selecionado .descricao-personagem {
+    font-size: 1rem; 
+    line-height: 1.375rem;
+    text-align: center;
+    margin-top: 1.25rem;
+    width: 28.125rem;
+}
+
+/* Estilo para os parágrafos */
+p {
+    font-size: 0.825rem; /* Define o tamanho da fonte */
+    line-height: 1.75rem; /* Aumenta o espaçamento entre as linhas */
+    margin: 1.25rem 0; /* Espaçamento acima e abaixo */
+    text-align: justify; /* Justifica o texto */
+    color: inherit; /* Mantém a cor do texto do tema */
+}
+
+/* CSS para Navbar */
+.navbar {
+    padding: 2rem;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.625rem 0.9375rem;
+    font-size: 1.125rem;
+}
+
+.nav-list li a:hover {
+    background-color: #141414;
+    border-radius: 0.3125rem;
+}
+
+/* Ajuste para o botão de alternância de tema */
+#theme-toggle {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    font-size: 1.125rem;
+    cursor: pointer;
+    padding: 0.625rem;
+}
+
+#theme-toggle:hover {
+    background-color: #555;
+    border-radius: 10rem;
+}
+
+body.light-theme #theme-toggle:hover {
+    background-color: #878787;
+}
