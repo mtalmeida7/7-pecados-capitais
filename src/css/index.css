@@ -39,7 +39,7 @@ body.light-theme .nav-list li a {
 }
 
 body.light-theme .nav-list li a:hover {
-    background-color: #878787; /* Efeito hover para o tema claro */
+    color: #0cd4d4; /* Efeito hover para o tema claro */
 }
 
 body.light-theme .selecao-de-personagens .titulo {
@@ -264,7 +264,7 @@ p {
 }
 
 .nav-list li a:hover {
-    background-color: #141414;
+    color: #ff0000;
     border-radius: 0.3125rem;
 }
 
