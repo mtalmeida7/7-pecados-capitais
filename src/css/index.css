@@ -286,3 +286,101 @@ p {
 body.light-theme #theme-toggle:hover {
     background-color: #878787;
 }
+
+/* Estilos para a seção de contato */
+.contato-section {
+    text-align: center;
+    padding: 4rem;
+}
+
+.contato-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-contato label {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.form-contato input,
+.form-contato textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-contato textarea {
+    resize: none;
+    height: 120px;
+}
+
+.form-contato .botao-enviar {
+    padding: 0.75rem;
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+body.light-theme .form-contato .botao-enviar {
+    background-color: #0cd4d4;
+    color: black
+}
+
+
+/* Estilos para o footer */
+footer {
+    display: flex;
+    flex-direction: column; /* Muda para coluna para empilhar os elementos */
+    justify-content: center; /* Centraliza na vertical */
+    align-items: center; /* Centraliza na horizontal */
+    padding: 1rem;
+    color: white;
+}
+
+footer .social-links {
+    display: flex; /* Torna os links flexíveis */
+    justify-content: center; /* Centraliza os ícones */
+    gap: 1rem; /* Espaçamento entre os ícones */
+    margin-top: 1rem; /* Adiciona espaçamento acima dos ícones */
+}
+
+footer .social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #ff0000;
+}
+
+body.light-theme footer .social-links a:hover {
+    color:#0cd4d4
+}
+
+body.light-theme .social-links a {
+    color: #000000;
+}
+
+footer .botao-direito {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 1rem; /* Adiciona espaçamento entre o botão e os ícones */
+}

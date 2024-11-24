@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>The Seven Deadly Sins</title>
 </head>
-    
-
+<body>
     <!-- Navbar -->
     <nav class="navbar">
         <ul class="nav-list">
@@ -26,13 +25,38 @@
     <header class="cabecalho">
         <img class="logo" src="./src/imagens/logo.png" alt="Logo The Seven Deadly Sins">
     </header>
-    
 
-    <footer>
+    <!-- Seção de Contato -->
+    <main>
+        <section id="contato" class="contato-section">
+            <h2>Entre em Contato</h2>
+            <form action="https://formspree.io/f/xnnqbbwa" method="POST" class="form-contato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem" required></textarea>
+
+                <button type="submit" class="botao-enviar">Enviar</button>
+            </form>
+        </section>
         <button id="theme-toggle" class="botao-direito" aria-label="Alterar Tema">
             <i class="fas fa-moon"></i>
         </button>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/mtalmeida7" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/24999614957" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/mtalmeida7/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
     </footer>
+
     <script src="./src/js/index.js"></script>
 </body>
 </html>

@@ -64,3 +64,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Adiciona o evento de alternância de tema ao botão
 toggleButton.addEventListener('click', toggleTheme);
+
+document.querySelector('.form-contato').addEventListener('submit', function (e) {
+    e.preventDefault(); // Impede o reload padrão do formulário
+
+    // Dados do formulário
+    const params = {
+        nome: document.getElementById('nome').value,
+        email: document.getElementById('email').value,
+        mensagem: document.getElementById('mensagem').value,
+    };
+
+    // Envia o formulário para o Formspree
+    fetch('https://formspree.io/f/xnnqbbwa', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+        },
+        body: new URLSearchParams(params),
+    })
+    .then((response) => {
+        if (response.ok) {
+            // Sucesso: Mostra uma mensagem de sucesso
+            alert("Mensagem enviada com sucesso!");
+            // Opcionalmente, limpar o formulário após o envio
+            document.querySelector('.form-contato').reset();
+        } else {
+            // Se não for bem-sucedido, mostra um erro
+            alert("Houve um erro ao enviar a mensagem. Tente novamente mais tarde.");
+        }
+    })
+    .catch((error) => {
+        // Erro - Mostra uma mensagem de erro
+        console.error("Erro ao enviar mensagem:", error);
+        alert("Houve um erro ao enviar a mensagem. Tente novamente mais tarde.");
+    });
+});
