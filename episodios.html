@@ -10,6 +10,59 @@
     <!-- Link para o FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>The Seven Deadly Sins</title>
+    <style>
+        /* Estilos para o modal */
+        .modal {
+            display: none; /* Inicialmente oculto */
+            position: fixed;
+            z-index: 1; /* Fica sobre o conteúdo */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+            justify-content: center; /* Centraliza o conteúdo horizontalmente */
+            align-items: center;
+        }
+
+        .modal-conteudo {
+            position: relative;
+            width: 100%;
+            max-width: 56.25rem; /* 900px para rem */
+            padding: 1.5625rem; /* 25px para rem */
+            background-color: #ffffff;
+            border-radius: 0.5rem; /* 8px para rem */
+            overflow: hidden;
+        }
+
+        body.light-theme .modal-conteudo {
+            background:#000000
+        }
+
+        .modal-conteudo iframe {
+            width: 100%;
+            height: 28.125rem; /* 450px para rem */
+        }
+
+        .fechar {
+            color: red;
+            position: absolute;
+            top: 0.0625rem; /* 1px para rem */
+            right: 0.375rem; /* 6px para rem */
+            font-size: 1.875rem; /* 30px para rem */
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10; /* Garante que o botão ficará acima do conteúdo do modal */
+        }
+
+        .fechar:hover {
+            color: #000; /* Alterando a cor ao passar o mouse */
+        }
+
+        body.light-theme .fechar:hover {
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -31,71 +84,90 @@
             <ul class="lista-episodios">
                 <!-- Episódio 1 -->
                 <li class="episodio">
-                    <h2 class="episodio-titulo">O Cavaleiro do Pecado da Ira</h2>
-                    <p><strong>Número:</strong> 1</p>
-                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Episódio 1" class="episodio-imagem">
-                    <p><strong>Descrição:</strong> Introdução de Meliodas e os outros Pecados Capitais, mostrando a formação do grupo e o início da jornada. Apresenta o mistério em torno de Meliodas e sua conexão com Elizabeth.</p>
-                </li>
-                <!-- Episódio 2 -->
+                    <h2 class="episodio-titulo">Heróis</h2>
+                    <div class="episodio-info">
+                        <p><strong>Temporada:</strong> 1</p>
+                        <p><strong>Episódio:</strong> 24</p>
+                    </div>
+                    <img src="https://occ-0-1824-420.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTVeGqu9HEgh3P6wbki3_oWY8mSGKrLz5kGngQjZA5IHWjCtkig7x63DmtiUaXkU5jJJuVXz7eaOreDllKISl58dtn_suFoH20jvIAmp0hx3WTiV8pykCShf.webp?r=5a2&quot" 
+                         alt="Imagem do Episódio 1" 
+                         class="episodio-imagem" 
+                         style="width: 18.75rem; height: 12.5rem;">
+                    <p><strong>Descrição:</strong> Os Sete Pecados enfrentam Hendrickson em uma batalha épica para salvar Liones. Meliodas revela o poder de sua espada, e Elizabeth desperta um dom oculto que muda o rumo da luta.</p>
+                    <!-- Botão para assistir ao trailer -->
+                    <button class="assistir-trailer" onclick="openModal('https://www.youtube.com/embed/wxcvbL6o55M?si=mU60dgtJHFA871D7')">Assistir ao Trailer</button>
+                </li>                
+                <!-- Episódio 2 (agora o terceiro) -->
                 <li class="episodio">
-                    <h2 class="episodio-titulo", style="margin-bottom: -30px;">A Batalha Contra o Pecado da Luxúria</h2>
-                    <p><strong>Número:</strong> 12</p>
-                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Episódio 2" class="episodio-imagem">
-                    <p><strong>Descrição:</strong> Primeira grande batalha contra um dos 10 Mandamentos, revelando o verdadeiro poder dos Pecados Capitais e o início das tensões com os inimigos.</p>
+                    <h2 class="episodio-titulo" style="margin-bottom: -0.75rem;">O Renascer do Clã dos Demônios</h2>
+                    <div class="episodio-info">
+                        <p><strong>Temporada:</strong> 3</p>
+                        <p><strong>Episódio:</strong> 1</p>
+                    </div>
+                    <img src="https://occ-0-1824-420.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcQlf0CMGllUFr_WWgQlTpkP_t9zHAgwIthALFpQR_snl3Ijx3T1PYZvvqfGAy7g0C0J3Zj7pynTvqQwtXdiPBNiYrZKqB223xKq2UagLm1IaY4By_Tr8mzk.webp?r=218&quot"
+                         alt="Imagem do Episódio 2"
+                         class="episodio-imagem"
+                         style="width: 18.75rem; height: 12.5rem;">
+                    <p><strong>Descrição:</strong> Meliodas e Elizabeth enfrentam os efeitos de uma maldição que os conecta através de várias vidas, enquanto descobrem segredos do passado de Meliodas e seu clã, com a ameaça de um antigo inimigo ressurgindo.</p>
+                    <!-- Botão para assistir ao trailer -->
+                    <button class="assistir-trailer" onclick="openModal('https://www.youtube.com/embed/tKrFMllQSX8?si=pSNjISJRW2W3J31H')">Assistir ao Trailer</button>
                 </li>
-                <!-- Episódio 3 -->
+                <!-- Episódio 3 (agora o segundo) -->
                 <li class="episodio">
-                    <h2 class="episodio-titulo">O Sacrifício de Meliodas</h2>
-                    <p><strong>Número:</strong> 24</p>
-                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Episódio 3" class="episodio-imagem">
-                    <p><strong>Descrição:</strong> Meliodas faz um grande sacrifício por seus amigos, revelando mais sobre seu passado e marcando uma grande mudança na trama.</p>
+                    <h2 class="episodio-titulo" style="margin-bottom: -0.60rem;">Esperança, Conflito e Desespero</h2>
+                    <div class="episodio-info">
+                        <p><strong>Temporada:</strong> 5</p>
+                        <p><strong>Episódio:</strong> 7</p>
+                    </div>
+                    <img src="https://occ-0-1824-420.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfnG5rJ7XhQL-5iKRYVemt5Gtb1RWZ4mDQl-YOmHDaLfUj1GW8rckSENM7mNP4bbJCeacxnxT4gK99bdX_XZvgLlm3xs6B-7zbUeMtxRnVu0-5eQB_mvdQx4.webp?r=b98&quot"
+                         alt="Imagem do Episódio 3"
+                         class="episodio-imagem"
+                         style="width: 18.75rem; height: 12.5rem;">
+                    <p><strong>Descrição:</strong> Escanor enfrenta Meliodas em sua forma mais poderosa. A luta é marcada pela arrogância confiante de Escanor e sua frase icônica: "Quem decidiu isso?".</p>
+                    <!-- Botão para assistir ao trailer -->
+                    <button class="assistir-trailer" onclick="openModal('https://www.youtube.com/embed/KgQ6zBKHm9M?si=tBlV-2gO_z8l07Yi')">Assistir ao Trailer</button>
                 </li>
             </ul>
         </section>
     </main>
 
-    <!-- Modal do Trailer -->
-    <div id="modal-trailer" class="modal">
+    <!-- Modal para assistir ao trailer -->
+    <div id="trailer-modal" class="modal">
         <div class="modal-conteudo">
-            <button id="fechar-modal" class="fechar-modal">X</button>
-            <iframe id="video-trailer" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            <span class="fechar" onclick="closeModal()">&times;</span>
+            <iframe id="trailer-video" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
-    <footer>
-        <button id="theme-toggle" class="botao-direito" aria-label="Alterar Tema">
-            <i class="fas fa-moon"></i>
-        </button>
-    </footer>
+    <button id="theme-toggle" class="botao-direito" aria-label="Alterar Tema">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <script src="./src/js/index.js"></script>
     <script>
-        // Script para abrir o modal com o trailer
-        const buttonsAssistir = document.querySelectorAll('.assistir-trailer');
-        const modal = document.getElementById('modal-trailer');
-        const fecharModal = document.getElementById('fechar-modal');
-        const iframe = document.getElementById('video-trailer');
+        // Função para abrir o modal e carregar o vídeo do YouTube
+        function openModal(videoUrl) {
+            var modal = document.getElementById('trailer-modal');
+            var iframe = document.getElementById('trailer-video');
+            iframe.src = videoUrl;
+            modal.style.display = "flex";  // Usando flexbox para centralizar
+        }
 
-        buttonsAssistir.forEach(button => {
-            button.addEventListener('click', () => {
-                const videoId = button.getAttribute('data-video-id');
-                iframe.src = `https://www.youtube.com/embed/${videoId}`;
-                modal.style.display = 'block';
-            });
-        });
+        // Função para fechar o modal
+        function closeModal() {
+            var modal = document.getElementById('trailer-modal');
+            var iframe = document.getElementById('trailer-video');
+            iframe.src = ""; // Para de reproduzir o vídeo ao fechar
+            modal.style.display = "none";
+        }
 
-        fecharModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-            iframe.src = ''; // Parar o vídeo ao fechar
-        });
-
-        // Fechar o modal ao clicar fora dele
-        window.addEventListener('click', (event) => {
+        // Fechar o modal quando clicar fora dele
+        window.onclick = function(event) {
+            var modal = document.getElementById('trailer-modal');
             if (event.target === modal) {
-                modal.style.display = 'none';
-                iframe.src = ''; // Parar o vídeo ao fechar
+                closeModal();
             }
-        });
+        }
     </script>
 </body>
 </html>

@@ -59,6 +59,7 @@ body.light-theme .selecao-de-personagens .titulo {
     margin: 1.25rem auto; /* Centraliza o botão e dá espaçamento */
 }
 
+
 #theme-toggle:hover {
     background-color: #555;
     border-radius: 0.3125rem;
@@ -66,13 +67,22 @@ body.light-theme .selecao-de-personagens .titulo {
 
 /* Estilos para o ícone do botão de alternância */
 #theme-toggle .icon {
-    font-size: 1.5rem; /* Define o tamanho do ícone */
-    transition: transform 0.3s ease; /* Suaviza o efeito de transformação */
+    color: white; /* Ícone branco no tema escuro */
+    font-size: 1.5rem;
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
 }
 
+/* Quando o tema claro for ativado, a cor do ícone será preta */
+body.light-theme #theme-toggle .icon {
+    color: black; /* Ícone preto no tema claro */
+}
+
+/* Efeito de transformação ao passar o mouse */
 #theme-toggle:hover .icon {
     transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
 }
+
+
 
 /* Estilos para o cabeçalho */
 .cabecalho {
@@ -376,7 +386,7 @@ body.light-theme .social-links a {
     color: #000000;
 }
 
-footer .botao-direito {
+footer .botao-direito, .botao-direito2 {
     background: none;
     border: none;
     color: white;
@@ -385,69 +395,38 @@ footer .botao-direito {
     margin-top: 1rem; /* Adiciona espaçamento entre o botão e os ícones */
 }
 
-/* Estilos para o Modal do Trailer */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none; /* Inicialmente escondido */
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.modal-conteudo {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    max-width: 800px;
-    width: 90%;
-}
-
-#fechar-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    font-size: 1.5rem;
-    color: #333;
-    cursor: pointer;
-}
-
-iframe {
-    width: 100%;
-    height: 315px;
-    border-radius: 8px;
+body.light-theme footer .botao-direito, .botao-direito2 {
+    color: black
 }
 
 /* Estilos para a seção de Episódios */
 .episodios-favoritos {
     margin: 40px auto;
     max-width: 1200px;
-    padding: 20px;
 }
 
 .lista-episodios {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 .episodio {
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    justify-content: space-between; /* Distribui os itens para garantir que o botão fique no final */
     background-color: none;
     color: rgb(255, 255, 255);
-    padding: 5px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    height: 100%; /* Permite que a caixa ocupe o espaço disponível */
+    min-height: 300px; /* Define uma altura mínima para garantir que a caixa não fique muito pequena */
 }
+
 body.light-theme .episodio {
     background-color: none;
     color: #000000;
@@ -460,12 +439,12 @@ body.light-theme .episodio {
 
 .episodio-titulo {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #ff0000;
 }
 
 body.light-theme .episodio-titulo {
-    color:#000000
+    color:#000000;
 }
 
 .episodio-imagem {
@@ -478,11 +457,13 @@ body.light-theme .episodio-titulo {
 .episodio p {
     font-size: 1rem;
     margin-bottom: 10px;
+    flex-grow: 1; /* Permite que a descrição cresça, mas não empurre o botão para baixo de maneira errada */
 }
 
+/* Botão Assistir Trailer */
 .assistir-trailer {
-    background-color: #007BFF;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -492,21 +473,21 @@ body.light-theme .episodio-titulo {
 }
 
 .assistir-trailer:hover {
-    background-color: #0056b3;
+    background-color: #ff0000;
 }
 
-/* Responsividade para Modal e Episódios */
-@media (max-width: 768px) {
-    .modal-conteudo {
-        width: 90%;
-        padding: 10px;
-    }
+body.light-theme .assistir-trailer {
+    background-color: black;
+    color: white;
+}
 
-    iframe {
-        height: 200px;
-    }
+body.light-theme .assistir-trailer:hover {
+    background-color: #0cd4d4;
+}
 
-    .lista-episodios {
-        grid-template-columns: 1fr;
-    }
+.episodio-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adiciona 20px de espaçamento entre os itens */
 }
