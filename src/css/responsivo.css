@@ -72,19 +72,3 @@
         font-size: 0.9rem;
     }
 }
-
-/* Responsividade para Modal e Episódios */
-@media (max-width: 768px) {
-    .modal-conteudo {
-        width: 90%;
-        padding: 10px;
-    }
-
-    iframe {
-        height: 200px;
-    }
-
-    .lista-episodios {
-        grid-template-columns: 1fr;
-    }
-}

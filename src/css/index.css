@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
+
 /* Estilo para o tema escuro (padrão) */
 body {
     font-family: 'Oxanium', cursive;
@@ -400,22 +402,31 @@ body.light-theme footer .botao-direito, .botao-direito2 {
 }
 
 /* Estilos para a seção de Episódios */
+/* Centralizar a seção de Episódios */
 .episodios-favoritos {
     margin: 40px auto;
     max-width: 1200px;
+    display: flex; /* Usando flexbox */
+    flex-direction: column; /* Coloca os episódios em coluna */
+    align-items: center; /* Centraliza os itens na horizontal */
+    justify-content: center; /* Garante que o conteúdo esteja centralizado verticalmente */
+    text-align: center; /* Centraliza o texto dentro da seção */
 }
 
+/* Centralização da lista de episódios */
 .lista-episodios {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid responsivo */
     gap: 25px;
+    justify-items: center; /* Centraliza os itens da grid */
 }
 
+/* Estilo para cada episódio */
 .episodio {
     display: flex;
-    flex-direction: column; /* Organiza o conteúdo em coluna */
-    justify-content: space-between; /* Distribui os itens para garantir que o botão fique no final */
+    flex-direction: column;
+    justify-content: space-between;
     background-color: none;
     color: rgb(255, 255, 255);
     border-radius: 8px;
@@ -423,12 +434,20 @@ body.light-theme footer .botao-direito, .botao-direito2 {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 20px;
-    height: 100%; /* Permite que a caixa ocupe o espaço disponível */
-    min-height: 300px; /* Define uma altura mínima para garantir que a caixa não fique muito pequena */
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Ajustes para o tema claro */
 body.light-theme .episodio {
     background-color: none;
+    color: #000000;
+}
+
+body.light-theme .episodio-titulo {
     color: #000000;
 }
 
@@ -437,16 +456,7 @@ body.light-theme .episodio {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.episodio-titulo {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #ff0000;
-}
-
-body.light-theme .episodio-titulo {
-    color:#000000;
-}
-
+/* Estilo para a imagem do episódio */
 .episodio-imagem {
     width: 100%;
     height: auto;
@@ -454,10 +464,11 @@ body.light-theme .episodio-titulo {
     margin-bottom: 10px;
 }
 
-.episodio p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    flex-grow: 1; /* Permite que a descrição cresça, mas não empurre o botão para baixo de maneira errada */
+/* Estilo para o título do episódio */
+.episodio-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ff0000;
 }
 
 /* Botão Assistir Trailer */
@@ -484,6 +495,7 @@ body.light-theme .assistir-trailer {
 body.light-theme .assistir-trailer:hover {
     background-color: #0cd4d4;
 }
+
 
 .episodio-info {
     display: flex;
