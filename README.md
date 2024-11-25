@@ -1,5 +1,3 @@
----
-
 # The Seven Deadly Sins - Site Oficial
 
 ## O Anime Escolhido 🎬
@@ -49,5 +47,3 @@ cd seven-deadly-sins-site
 O site é composto por arquivos HTML, CSS e JavaScript. Para visualizá-lo localmente, basta abrir o arquivo `index.html` no seu navegador:
 
 - No seu navegador, clique com o botão direito do mouse no arquivo `index.html` e selecione "Abrir com..." e escolha o seu navegador preferido (Chrome, Firefox, etc.).
-
----
